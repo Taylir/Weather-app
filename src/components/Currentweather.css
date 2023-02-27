@@ -1,0 +1,45 @@
+.current-weather__stats {
+  background: linear-gradient(to bottom, rgb(56, 56, 255), rgb(168, 168, 255));
+  width: 100%;
+  border-radius: 16px;
+  position: relative;
+}
+
+.temp__pref {
+  position: absolute;
+  right: 32px;
+  top: 24px;
+  z-index: 5;
+}
+
+.button__pref {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+  padding: 8px;
+  margin-left: 16px;
+  transition: all 200ms ease-in-out;
+}
+
+.button__pref:hover {
+  background-color: #242424;
+  color: white;
+  cursor: pointer;
+}
+
+.button__pref:active {
+  transform: scale(0.8);
+}
+
+.current-weather__icon {
+  margin: 24px auto;
+  transform: scale(1.5);
+}
+
+.current-weather__title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  padding: 0 16px;
+}

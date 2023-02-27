@@ -1,0 +1,21 @@
+.hourly-weather__card {
+  background-color: whitesmoke;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 16px;
+  margin-right: 8px;
+}
+
+.hourly-weather {
+  pointer-events: none;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hourly-weather > img {
+  transform: scale(1.5);
+}
