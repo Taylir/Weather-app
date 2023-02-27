@@ -4,6 +4,7 @@ import Hourlyweather from "./components/Hourlyweather";
 import Getlocation from "./components/Getlocation";
 import Currentweather from "./components/Currentweather";
 import getWeather from "./components/Getweather";
+import HourlySlider from "./components/Hourlyslider";
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -17,37 +18,12 @@ function App() {
     return num;
   }
 
+  //Slider useEffect for the sliding of the hourly Weathers.
   useEffect(() => {
-    if (weather) {
-      const slider = sliderRef.current;
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      slider.addEventListener("mousedown", (e) => {
-        isDown = true;
-        slider.classList.add("active");
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener("mouseleave", () => {
-        isDown = false;
-        slider.classList.remove("active");
-      });
-      slider.addEventListener("mouseup", () => {
-        isDown = false;
-        slider.classList.remove("active");
-      });
-      slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 1.75; //scroll-fast
-        slider.scrollLeft = scrollLeft - walk;
-      });
-    }
+    HourlySlider(sliderRef, weather);
   }, [weather]);
 
+  //Use Effect that defaults the weather to Washinton DC then clears it
   useEffect(() => {
     getWeather(userInput, setWeather);
     setUserInput("");
