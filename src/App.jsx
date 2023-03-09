@@ -6,6 +6,8 @@ import Currentweather from "./components/Currentweather";
 import getWeather from "./components/Getweather";
 import HourlySlider from "./components/Hourlyslider";
 
+// List item one is greating a set user option
+
 function App() {
   const [weather, setWeather] = useState(null);
   const [userInput, setUserInput] = useState("Washington Dc");
@@ -30,6 +32,7 @@ function App() {
   }, []);
 
   if (!weather) {
+    //List item 2
     return <div>Loading...</div>;
   }
 
